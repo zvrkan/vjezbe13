@@ -1,0 +1,27 @@
+<?php
+
+// Proizvod.php
+
+class Proizvod
+{
+    protected $naziv;
+    protected $cijena;
+
+    public function __construct($n, $c)
+    {
+        $this->naziv = $n;
+        $this->cijena = $c;
+    }
+
+    public function getNaziv()
+    {
+        return $this->naziv;
+    }
+
+    public function getCijena()
+    {
+        return $this->cijena;
+    }    
+}
+
+?>
