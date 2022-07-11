@@ -1,0 +1,12 @@
+<?php
+
+// autoload.php
+
+function include_class($class)
+{
+    include(__DIR__ ."/". $class . ".php");
+}
+
+spl_autoload_register('include_class');
+
+?>
