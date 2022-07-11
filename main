@@ -1,0 +1,37 @@
+<?php
+
+// main.php
+
+include("autoload.php");
+
+$proizvodiMgr = Proizvodi::getInstance();
+
+while(true)
+{
+    $n = readline("Proizvod: ");
+    $c = readline("Cijena: ");
+
+    $proizvodiMgr->setProizvod(new Proizvod($n, $c));
+
+    $check = readline("Da li zelite unijeti jos proizvoda (d/n): ");
+
+    if($check == "n" || $check == "N")
+    {
+        break;
+    }
+}
+
+$proizvodiUpravitelj = Proizvodi::getInstance();
+
+$proizvodiUpravitelj->setProizvod(new Proizvod("Tipkovnica", 100));
+
+
+$pMgr = Proizvodi::getInstance();
+
+$pMgr->setProizvod(new Proizvod("Mis", 50));
+
+
+$proizvodiMgr->prikaz();
+
+
+?>
