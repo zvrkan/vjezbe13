@@ -1,0 +1,44 @@
+<?php
+
+// Proizvodi.php
+
+class Proizvodi
+{
+    protected $proizvodi = array();
+    private static $instance;
+
+    public function getProizvodi()
+    {
+        return $this->proizvodi;
+    }
+
+    public function setProizvod($param)
+    {
+        $this->proizvodi[] = $param;
+    }
+
+    public function prikaz()
+    {
+        $p = $this->getProizvodi();
+
+        if(is_array($p))
+        {
+            foreach($p as $key => $proizvod)
+            {
+                echo $proizvod->getNaziv() . " - " . $proizvod->getCijena() . "\n";
+            }
+        }
+    }
+
+    public static function getInstance()
+    {
+        if(!isset(self::$instance))
+        {
+            self::$instance = new self;
+        }
+
+        return self::$instance;
+    }
+}
+
+?>
